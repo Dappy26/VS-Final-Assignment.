@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My Favorite Music</title>
+    <style>
+        /* CSS Requirement: Customizing background and fonts */
+        body {
+            background-color: greenyellow;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        #animateMe {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Favorite Song</h1>
+
+    <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            frameborder="0" allowfullscreen>
+    </iframe>
+
+    <div id="animateMe"></div>
+    <button onclick="moveBox()">Click to Animate!</button>
+
+    <script>
+        /* JavaScript Requirement: Create an animation */
+        function moveBox() {
+            let elem = document.getElementById("animateMe");
+            let pos = 0;
+            let id = setInterval(frame, 5);
+            function frame() {
+                if (pos == 150) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
